@@ -1,0 +1,109 @@
+abbr.tooltip-wrapper {
+    text-decoration: none;
+}
+
+span.tooltip-content {
+   display: none;
+}
+
+@media (min-width: 768px) { 
+    abbr.tooltip-wrapper {
+        cursor: help;
+        text-decoration: underline dotted;
+        position: relative;
+        display: inline-block;
+    }
+
+    abbr.tooltip-wrapper:active, abbr.tooltip-wrapper:focus {
+        outline: 2px dotted black;
+    }
+
+    abbr.tooltip-wrapper:hover > span.tooltip-content, span.tooltip-content.triggered {
+        width: 13.75rem;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    span.tooltip-inline-description {
+        border: 0;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+    span.tooltip-content {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+        position: absolute;
+        bottom: calc(150% + 5px);
+        left: 50%;
+        margin-left: -110px;
+        padding: 0.375rem;
+        border-radius: 3px;
+        border: 2px solid black;
+        color: #ffffff;
+        text-align: center;
+        font-size: 0.875;
+        line-height: 1.2;
+        z-index: 10;
+    }
+
+    span.tooltip-content::before {
+        content: "";
+    }
+
+    span.tooltip-content::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0; 
+        height: 0; 
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid #000000;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 0;
+        transform: translateY(100%);
+    }
+
+    span.tooltip-content.on-bottom {
+        bottom: auto;
+        top: calc(150% + 5px);
+    }
+
+    span.tooltip-content.on-bottom::after {
+        top: 0;
+        bottom: unset;
+        transform: translateY(-100%) rotate(180deg);
+    }
+
+    span.tooltip-content.on-left {
+        left: 0;
+        margin: 0;
+    }
+
+    span.tooltip-content.on-right {
+        left: unset;
+        right: 0;
+    }
+
+    span.tooltip-content.on-left::after {
+        left: 5px;
+        margin: unset;
+    }
+
+    span.tooltip-content.on-right::after {
+        right: 5px;
+        left: unset;
+        margin: unset;
+    }
+}
