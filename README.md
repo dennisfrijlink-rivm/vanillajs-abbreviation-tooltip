@@ -20,3 +20,11 @@ A lightweight and accessible abbreviation tooltip implemented using vanilla Java
 ```html
 <link rel="stylesheet" href="css/style.css">
 <script src="js/main.js" defer></script>
+```
+
+## Example
+```html
+<abbr data-title="Rijksinstituut voor Volksgezondheid en Milieu" data-background="#ca005d" class="tooltip-wrapper" tabindex="0">
+    <span class="tooltip-trigger">RIVM</span>
+</abbr>
+```
